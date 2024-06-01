@@ -10,8 +10,8 @@
 </head>
 
 <body class="bg-gray-200 flex flex-col min-h-screen">
-    <nav class="bg-white shadow-md p-4 sticky top-0 z-10 flex justify-between items-center">
-        <h1 class="text-3xl font-bold">Interview Preparation Progress Tracker</h1>
+    <nav id="navbar" class="bg-white shadow-md p-4 sticky top-0 z-10 flex justify-between items-center">
+        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Interview Preparation Progress Tracker</h1>
         <div>
             <button id="modeToggleBtn">
                 <i id="modeIcon" class="ri-sun-line text-yellow-500 text-lg"></i>
@@ -19,13 +19,14 @@
         </div>
     </nav>
 
-    <div class="container mx-auto p-4 flex-grow min-h-screen">
-        <div class="grid grid-cols-2 gap-4 w-full">
+    <div id="container" class="container mx-auto p-4 flex-grow overflow-y-auto pt-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 w-full">
             <a href="./subIndex page/namastejs.html"
-                class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                class="card bg-white dark:bg-gray-800 p-4 shadow-md rounded-lg cursor-pointer transition transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 flex flex-col justify-between">
                 <div>
-                    <h2 class="text-xl font-semibold mb-2">Namaste JavaScript</h2>
-                    <p>Namaste JavaScript, created by Akshay Saini, is an educational platform dedicated to teaching
+                    <h2 class="text-xl font-semibold mb-2 text-black dark:text-white">Namaste JavaScript</h2>
+                    <p class="text-gray-800 dark:text-gray-300">Namaste JavaScript, created by Akshay Saini, is an
+                        educational platform dedicated to teaching
                         JavaScript concepts comprehensively. Through structured content and practical examples, learners
                         can
                         grasp fundamental and advanced topics with ease. The platform offers a supportive learning
@@ -34,13 +35,16 @@
                         an experienced developer, Namaste JavaScript provides the resources needed to enhance your
                         JavaScript skills effectively.</p>
                 </div>
-                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Practice <i class="ri-arrow-right-double-fill"></i></button>
+                <button
+                    class="mt-4 bg-blue-500 dark:bg-blue-700 text-white py-2 px-4 rounded hover:bg-blue-600 dark:hover:bg-blue-800 w-36">Practice
+                    <i class="ri-arrow-right-double-fill"></i></button>
             </a>
             <a href="./subIndex page/codingProblem.html"
-                class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                class="card bg-white dark:bg-gray-800 p-4 shadow-md rounded-lg cursor-pointer transition transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 flex flex-col justify-between">
                 <div>
-                    <h2 class="text-xl font-semibold mb-2">Coding Problems</h2>
-                    <p>JavaScript Coding Problems is a resource designed to enhance logic-building skills through
+                    <h2 class="text-xl font-semibold mb-2 text-black dark:text-white">Coding Problems</h2>
+                    <p class="text-gray-800 dark:text-gray-300">JavaScript Coding Problems is a resource designed to
+                        enhance logic-building skills through
                         practical
                         challenges and exercises. Developed for programmers at all levels, it offers a diverse range of
                         problems to solve, spanning from basic to advanced difficulty levels. With clear instructions
@@ -51,13 +55,18 @@
                         looking to strengthen your programming skills, JavaScript Coding Problems provides an invaluable
                         platform for honing your logic and algorithmic thinking skills.</p>
                 </div>
-                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Practice <i class="ri-arrow-right-double-fill"></i></button>
+                <button
+                    class="mt-4 bg-blue-500 dark:bg-blue-700 text-white py-2 px-4 rounded hover:bg-blue-600 dark:hover:bg-blue-800 w-36">Practice
+                    <i class="ri-arrow-right-double-fill"></i></button>
             </a>
+
             <a href="./subIndex page/fiftyDays.html"
-                class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                class="card bg-white dark:bg-gray-800 p-4 shadow-md rounded-lg cursor-pointer transition transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 flex flex-col justify-between">
                 <div>
-                    <h2 class="text-xl font-semibold mb-2">50 Days 50 HTML CSS JavaScript</h2>
-                    <p>The "50 Days 50 HTML CSS JavaScript" project is a comprehensive initiative designed to enhance
+                    <h2 class="text-xl font-semibold mb-2 text-black dark:text-white">50 Days 50 HTML CSS JavaScript
+                    </h2>
+                    <p class="text-gray-800 dark:text-gray-300">The "50 Days 50 HTML CSS JavaScript" project is a
+                        comprehensive initiative designed to enhance
                         proficiency in frontend web development over a 50-day period. Through a structured curriculum,
                         participants delve into various aspects of HTML, CSS, and JavaScript, covering essential
                         concepts
@@ -67,13 +76,16 @@
                         of frontend technologies, empowering them to build responsive and interactive web applications
                         confidently.</p>
                 </div>
-                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Practice <i class="ri-arrow-right-double-fill"></i></button>
+                <button
+                    class="mt-4 bg-blue-500 dark:bg-blue-700 text-white py-2 px-4 rounded hover:bg-blue-600 dark:hover:bg-blue-800 w-36">Practice
+                    <i class="ri-arrow-right-double-fill"></i></button>
             </a>
             <a href="./subIndex page/vanillajs.html"
-                class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                class="card bg-white dark:bg-gray-800 p-4 shadow-md rounded-lg cursor-pointer transition transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 flex flex-col justify-between">
                 <div>
-                    <h2 class="text-xl font-semibold mb-2">30 Days Vanilla JavaScript</h2>
-                    <p>"30 Days Vanilla JavaScript" is an intensive learning journey crafted to sharpen JavaScript
+                    <h2 class="text-xl font-semibold mb-2 text-black dark:text-white">30 Days Vanilla JavaScript</h2>
+                    <p class="text-gray-800 dark:text-gray-300">"30 Days Vanilla JavaScript" is an intensive learning
+                        journey crafted to sharpen JavaScript
                         skills
                         over a month-long period. Participants engage in daily coding exercises and projects focused
                         solely
@@ -83,13 +95,17 @@
                         build
                         robust web applications from scratch.</p>
                 </div>
-                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Practice <i class="ri-arrow-right-double-fill"></i></button>
+                <button
+                    class="mt-4 bg-blue-500 dark:bg-blue-700 text-white py-2 px-4 rounded hover:bg-blue-600 dark:hover:bg-blue-800 w-36">Practice
+                    <i class="ri-arrow-right-double-fill"></i></button>
             </a>
             <a href="./subIndex page/reactJsPrep.html"
-                class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                class="card bg-white dark:bg-gray-800 p-4 shadow-md rounded-lg cursor-pointer transition transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 flex flex-col justify-between">
                 <div>
-                    <h2 class="text-xl font-semibold mb-2">100 React JS Interview Questions</h2>
-                    <p>"100 React JS Interview Questions" is a comprehensive resource designed to aid in the preparation
+                    <h2 class="text-xl font-semibold mb-2 text-black dark:text-white">100 React JS Interview Questions
+                    </h2>
+                    <p class="text-gray-800 dark:text-gray-300">"100 React JS Interview Questions" is a comprehensive
+                        resource designed to aid in the preparation
                         for
                         React.js interviews. It provides a curated collection of questions covering a wide range of
                         topics,
@@ -99,35 +115,93 @@
                         prepare
                         effectively for interviews in the competitive tech industry.</p>
                 </div>
-                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Practice <i class="ri-arrow-right-double-fill"></i></button>
+                <button
+                    class="mt-4 bg-blue-500 dark:bg-blue-700 text-white py-2 px-4 rounded hover:bg-blue-600 dark:hover:bg-blue-800 w-36">Practice
+                    <i class="ri-arrow-right-double-fill"></i></button>
             </a>
             <a href="./subIndex page/javascriptPrep.html"
-                class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                class="card bg-white dark:bg-gray-800 p-4 shadow-md rounded-lg cursor-pointer transition transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white flex flex-col justify-between">
                 <div>
-                    <h2 class="text-xl font-semibold mb-2">100 JavaScript Interview Questions</h2>
-                    <p>"100 JavaScript Interview Questions" is a valuable resource crafted to assist individuals in
+                    <h2 class="text-xl font-semibold mb-2 text-black dark:text-white">100 JavaScript Interview Questions
+                    </h2>
+                    <p class="text-gray-800 dark:text-gray-300">"100 JavaScript Interview Questions" is a valuable
+                        resource crafted to assist individuals in
                         preparing for JavaScript interviews. Offering a diverse array of questions, it encompasses
                         fundamental concepts, advanced topics, and real-world scenarios. By exploring various aspects of
                         JavaScript development, this compilation equips candidates with the knowledge and confidence
                         needed
                         to excel in interviews and secure coveted positions in the tech industry.</p>
                 </div>
-                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Practice <i class="ri-arrow-right-double-fill"></i></button>
+                <button
+                    class="mt-4 bg-blue-500 dark:bg-blue-700 text-white py-2 px-4 rounded hover:bg-blue-600 dark:hover:bg-blue-800 w-36">Practice
+                    <i class="ri-arrow-right-double-fill"></i></button>
             </a>
         </div>
     </div>
-    <footer class="bg-white shadow-md p-4 mt-auto bg-blue-500 text-center">
-        <p class="w-full">&copy; 2024 Your Company Name. All rights reserved.</p>
+    <footer class="bg-white shadow-md p-4 mt-auto bg-sky-200 dark:bg-gray-800 text-center">
+        <p class="w-full dark:text-gray-300">&copy; 2024 Your Company Name. All rights reserved.</p>
     </footer>
 
     <script>
         const modeToggleBtn = document.getElementById('modeToggleBtn');
         const modeIcon = document.getElementById('modeIcon');
+        const navbar = document.getElementById('navbar');
+        const container = document.getElementById('container');
+        const footer = document.querySelector('footer');
+        const body = document.body;
+        const cards = document.querySelectorAll('.card');
 
         modeToggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('bg-gray-800');
-            document.body.classList.toggle('text-black');
-            if (document.body.classList.contains('bg-gray-800')) {
+            body.classList.toggle('bg-gray-800');
+            body.classList.toggle('text-white');
+
+
+            navbar.classList.toggle('bg-gray-800');
+            navbar.classList.toggle('text-white');
+
+            container.classList.toggle('bg-gray-800');
+            container.classList.toggle('text-white');
+
+            footer.classList.toggle('bg-gray-800');
+            footer.classList.toggle('text-white');
+
+            cards.forEach(card => {
+                const anchor = card.querySelector('a');
+                const h2 = card.querySelector('h2');
+                const p = card.querySelector('p');
+                const button = card.querySelector('button');
+
+                if (body.classList.contains('bg-gray-800')) {
+
+                    anchor.classList.remove('bg-white');
+                    anchor.classList.add('dark:bg-gray-800');
+                    anchor.classList.add('text-white');
+
+                    h2.classList.remove('text-black');
+                    h2.classList.add('text-white');
+
+                    p.classList.remove('text-gray-800');
+                    p.classList.add('text-gray-300');
+
+                    button.classList.remove('text-white');
+                    button.classList.add('text-black');
+                } else {
+                    anchor.classList.remove('dark:bg-gray-800');
+                    anchor.classList.remove('text-white');
+                    anchor.classList.add('bg-white');
+
+                    h2.classList.remove('text-white');
+                    h2.classList.add('text-black');
+
+                    p.classList.remove('text-gray-300');
+                    p.classList.add('text-gray-800');
+
+                    button.classList.remove('text-black');
+                    button.classList.add('text-white');
+                }
+            });
+
+            if (body.classList.contains('bg-gray-800')) {
                 modeIcon.classList.remove('ri-sun-line');
                 modeIcon.classList.add('ri-moon-line');
             } else {
@@ -136,6 +210,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>
