@@ -32,15 +32,41 @@
             </button>
         </div>
     </nav>
-
+    <div class="flex justify-center items-center h-full w-full">
+        <div class="container mx-auto">
+            <div
+                class="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-12 lg:grid-cols-7 justify-center lg:justify-start gap-4 mt-10 my-3 mx-20">
+                <button onclick="location.href='namastejs.html'"
+                    class="btn btn-responsive bg-indigo-500 hover:bg-indigo-700 text-white py-2 px-4 rounded">NamasteJS</button>
+                <button onclick="location.href='codingProblem.html'"
+                    class="btn btn-responsive bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Coding
+                    Problems</button>
+                <button onclick="location.href='fiftyDays.html'"
+                    class="btn btn-responsive bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Fifty
+                    Days</button>
+                <button onclick="location.href='vanillajs.html'"
+                    class="btn btn-responsive bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">VanillaJS</button>
+                <button onclick="location.href='javascriptPrep.html'"
+                    class="btn btn-responsive bg-yellow-500 hover:bg-yellow-700 text-white py-2 px-4 rounded">JavaScript
+                    Prep</button>
+                <button onclick="location.href='reactJsPrep.html'"
+                    class="btn btn-responsive bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded">ReactJS
+                    Prep</button>
+                <a href="../index.html"
+                    class="btn btn-responsive bg-indigo-500 hover:bg-indigo-700 text-white py-5 px-4 rounded col-span-2 sm:col-auto md:col-span-2 lg:col-span-1 lg:text-center">Main
+                    Page</a>
+            </div>
+        </div>
+    </div>
     <div class="container mx-auto p-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div>
                 <div class="relative bg-gray-400 h-12 rounded-full overflow-hidden w-full" style="width: 91vw;">
-                    <h2
-                        class="absolute top-1 left-0 right-0 bottom-0 flex items-center justify-center text-xl font-semibold mb-2">
-                        Progress Bar...</h2>
-                    <div id="progressBar" class="absolute top-0 left-0 bg-green-400 h-full"></div>
+                    <div id="progressBar" class="absolute top-0 left-0 bg-green-400 h-full" style="width: 0;"></div>
+                    <h2 id="progressText"
+                        class="absolute top-1 left-0 right-0 bottom-0 flex items-center justify-center text-xl font-semibold mb-2 text-gray-800">
+                        Progress Bar...
+                    </h2>
                     <span id="progressPercentage"
                         class="absolute top-0 right-0 px-2 h-full flex items-center text-white"></span>
                 </div>
@@ -720,6 +746,8 @@
             });
 
             toggleCheckAllBtn.textContent = shouldCheckAll ? 'Uncheck All' : 'Check All';
+            toggleCheckAllBtn.classList.toggle('bg-red-500', shouldCheckAll);
+            toggleCheckAllBtn.classList.toggle('bg-blue-500', !shouldCheckAll);
             updateProgressBar();
         });
 
@@ -729,6 +757,13 @@
             progressBar.style.width = `${progressPercentageValue}%`;
             progressPercentage.textContent = `${progressPercentageValue}%`;
             progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0); // Change color to green if progress > 0%
+            if (progressPercentageValue === 100) {
+                progressBar.classList.add('bg-green-400');
+                progressText.classList.add('text-gray-900');
+            } else {
+                progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0);
+                progressText.classList.toggle('text-gray-900', progressPercentageValue > 0);
+            }
         }
     </script>
 </body>
