@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Style for default numbering */
+        #episodeList {
+            counter-reset: list-counter;
+        }
+
+        #episodeList li {
+            counter-increment: list-counter;
+        }
+
+        #episodeList li::before {
+            content: counter(list-counter) ". ";
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-200">
+    <nav class="bg-white p-4 flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Javscript Logical Coding Problems</h1>
+        <div>
+            <button id="modeToggleBtn">
+                <i id="modeIcon" class="ri-sun-line text-yellow-500 text-lg"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div>
+                <div class="relative bg-gray-400 h-12 rounded-full overflow-hidden w-full" style="width: 91vw;">
+                    <h2
+                        class="absolute top-1 left-0 right-0 bottom-0 flex items-center justify-center text-xl font-semibold mb-2">
+                        Progress Bar...</h2>
+                    <div id="progressBar" class="absolute top-0 left-0 bg-green-400 h-full"></div>
+                    <span id="progressPercentage"
+                        class="absolute top-0 right-0 px-2 h-full flex items-center text-white"></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-xl font-semibold mb-2 text-center bg-dark pt-5">List of commonly asked logical question in
+                Interview</h2>
+            <div class="flex justify-end mb-4">
+                <button id="toggleCheckAllBtn" class="bg-blue-500 text-white px-4 py-2 rounded-full mx-3">Check
+                    All</button>
+            </div>
+            <ul id="episodeList" class="list-decimal list-inside">
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript function to calculate the sum of two numbers.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="1">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript program to find the maximum number in an array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="2">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript function to check if a given string is a palindrome.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="3">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript program to reverse a string.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="4">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript function that takes an array of numbers and returns a new array with only the even numbers.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="5">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript program to calculate the factorial of a given number.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="6">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript function to check if a given number is prime.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="7">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript program to find the largest element in a nested array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="8">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript function that returns the Fibonacci sequence up to a given number of terms.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="9">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a JavaScript program to convert a string to title case (capitalize the first letter of each word).</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="10">
+                </li>
+                <!-- end of 10 questions -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a debounce function in JavaScript that limits the frequency of a function’s execution when it’s called repeatedly within a specified time frame.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="11">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that takes an array of objects and a key, and returns a new array sorted based on the values of that key in ascending order.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="12">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a deep clone function in JavaScript that creates a copy of a nested object or array without any reference to the original.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="13">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a recursive function to calculate the factorial of a given number.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="14">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that takes two sorted arrays and merges them into a single sorted array without using any built-in sorting functions.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="15">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that checks if a given string is a palindrome, considering only alphanumeric characters and ignoring case.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="16">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Create a JavaScript class for a linked list with methods to insert a node at the beginning, end, or at a specific position, and to delete a node from a given position.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="17">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that flattens a nested array in JavaScript, converting it into a single-level array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="18">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that determines if two strings are anagrams of each other.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="19">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Create a JavaScript function that returns the Fibonacci sequence up to a given number, utilizing memoization for optimized performance.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="20">
+                </li>
+                <!-- end of 20 episode -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function to check if a given string is a palindrome.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="21">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function to reverse a string without using the built-in reverse() method.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="22">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Given an array of numbers, write a function to find the largest and smallest numbers in the array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="23">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that takes an array of integers as input and returns a new array with only the unique elements.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="24">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function to find the factorial of a given number.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="25">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that determines if a given number is prime or not.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="26">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function to find the sum of all the numbers in an array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="27">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Given a string, write a function to count the occurrences of each character in the string.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="28">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function to remove duplicates from an array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="29">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that sorts an array of numbers in ascending order.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="30">
+                </li>
+                <!--end of 30 episode  -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that reverses the order of words in a sentence without using the built-in reverse() method.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="31">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that checks if a given string is a palindrome (ignoring whitespace and punctuation).</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="32">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that takes an array of integers and returns the largest difference between any two numbers in the array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="33">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that removes duplicates from an array, keeping only the unique elements.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="34">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that accepts a number and returns its factorial.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="35">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that flattens a nested array into a single-dimensional array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="36">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that checks if a given string is an anagram of another string.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="37">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that finds the second smallest element in an array of integers.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="38">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that generates a random alphanumeric string of a given length.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="39">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that converts a number to its Roman numeral representation.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="40">
+                </li>
+                <!-- end of 40 episode -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that returns the sum of all numbers in an array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="41">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that finds the maximum number in an array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="42">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that returns a new array containing only the unique elements from an input array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="43">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that returns the average value of numbers in an array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="44">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that sorts an array of strings in alphabetical order.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="45">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that finds the index of a specific element in an array. If the element is not found, the function should return -1.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="46">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that removes all falsy values (false, null, 0, "", undefined, and NaN) from an array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="47">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that merges two arrays into a single array, alternating elements from each array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="48">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Write a function that finds the second largest number in an array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="49">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Implement a function that groups elements in an array based on a given condition. For example, grouping even and odd numbers into separate arrays.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="50">
+                </li>
+                <!-- end of episode 50 -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Reverse An Array</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="51">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full"> Find the maximum number in an array.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="52">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full"> calculate sum of all numbers</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="53">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">remove duplicates from an array</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="54">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">find the largest contigous subarray sum</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="55">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">check if an array is palindrome or not</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="56">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">implement a function to shuffle an array</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="57">
+                </li>
+                <!-- for string -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Reverse a string.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="58">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Check if a string is a palindrome.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="59">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Check if two strings are anagrams of each other.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="60">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Compress a string by counting consecutive characters.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="61">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Capitalize the first letter of each word in a sentence.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="62">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Determine if one string is a rotation of another.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="63">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Generate all permutations of a string.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="64">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Truncate a string to a specified length and add ellipsis if necessary.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="65">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Validate if a string contains only valid characters (e.g., alphanumeric).</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="66">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Count the number of occurrences of a substring in a larger string.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="67">
+                </li>
+                <!-- object -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Merge two objects into one.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="68">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Deeply clone an object.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="69">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Serialize and deserialize JSON objects.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="70">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Check if two objects are equal (deep comparison).</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="71">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Transform an array of objects into an object with key-value pairs.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="72">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Create a class and demonstrate inheritance.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="73">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Iterate over the properties of an object.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="74">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Filter an object to include specific key-value pairs based on a condition.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="75">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Sort an array of objects based on a specific property.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="76">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Simulate private members in JavaScript objects.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="77">
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <script>
+        const progressBar = document.getElementById('progressBar');
+        const progressPercentage = document.getElementById('progressPercentage');
+        const checkboxes = document.querySelectorAll('.checkbox');
+        const toggleCheckAllBtn = document.getElementById('toggleCheckAllBtn');
+        const totalEpisodes = 77;
+
+
+        const modeToggleBtn = document.getElementById('modeToggleBtn');
+        const modeIcon = document.getElementById('modeIcon');
+
+        modeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('bg-gray-800');
+            document.body.classList.toggle('text-black');
+            if (document.body.classList.contains('bg-gray-800')) {
+                modeIcon.classList.remove('ri-sun-line');
+                modeIcon.classList.add('ri-moon-line');
+            } else {
+                modeIcon.classList.remove('ri-moon-line');
+                modeIcon.classList.add('ri-sun-line');
+            }
+        });
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                updateProgressBar();
+            });
+        });
+
+        toggleCheckAllBtn.addEventListener('click', () => {
+            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            const shouldCheckAll = !allChecked;
+
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = shouldCheckAll;
+                checkbox.classList.toggle('checked', shouldCheckAll);
+            });
+
+            toggleCheckAllBtn.textContent = shouldCheckAll ? 'Uncheck All' : 'Check All';
+            updateProgressBar();
+        });
+
+        function updateProgressBar() {
+            const checkedCount = document.querySelectorAll('.checkbox.checked').length;
+            const progressPercentageValue = Math.floor((checkedCount / totalEpisodes) * 100);
+            progressBar.style.width = `${progressPercentageValue}%`;
+            progressPercentage.textContent = `${progressPercentageValue}%`;
+            progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0); // Change color to green if progress > 0%
+        }
+    </script>
+</body>
+
+</html>

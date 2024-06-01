@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Style for default numbering */
+        #episodeList {
+            counter-reset: list-counter;
+        }
+
+        #episodeList li {
+            counter-increment: list-counter;
+        }
+
+        #episodeList li::before {
+            content: counter(list-counter) ". ";
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-200">
+    <nav class="bg-white p-4 flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Javscript Logical Coding Problems</h1>
+        <div>
+            <button id="modeToggleBtn">
+                <i id="modeIcon" class="ri-sun-line text-yellow-500 text-lg"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div>
+                <div class="relative bg-gray-400 h-12 rounded-full overflow-hidden w-full" style="width: 91vw;">
+                    <h2
+                        class="absolute top-1 left-0 right-0 bottom-0 flex items-center justify-center text-xl font-semibold mb-2">
+                        Progress Bar...</h2>
+                    <div id="progressBar" class="absolute top-0 left-0 bg-green-400 h-full"></div>
+                    <span id="progressPercentage"
+                        class="absolute top-0 right-0 px-2 h-full flex items-center text-white"></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-xl font-semibold mb-2 text-center bg-dark pt-5">List of commonly asked logical question in
+                Interview</h2>
+            <div class="flex justify-end mb-4">
+                <button id="toggleCheckAllBtn" class="bg-blue-500 text-white px-4 py-2 rounded-full mx-3">Check
+                    All</button>
+            </div>
+            <ul id="episodeList" class="list-decimal list-inside">
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is JavaScript? What is the role of JavaScript engine?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="1">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are client-side and server-side?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="2">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are variables? What is the difference between var, let, and const? V.
+                        IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="3">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are some important string operations in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="4">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is DOM? What is the difference between HTML and DOM?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="5">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are selectors in JS? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="6">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between getElementById, getElementsByClassName, and
+                        getElementsByTagName?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="7">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are data types in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="8">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are operators? What are the types of operators in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="9">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are the types of conditional statements in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="10">
+                </li>
+
+                <!-- end of 10 questions -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is a loop? What are the types of loops in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="11">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Functions in JS? What are the types of functions?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="12">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Arrow Functions in JS? What is their use? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="13">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Arrays in JS? How to get, add & remove elements from
+                        arrays?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="14">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Objects in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="15">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Scope in JavaScript? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="16">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Hoisting in JavaScript? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="17">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Error Handling in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="18">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is JSON?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="19">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is asynchronous programming in JS? What is its use?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="20">
+                </li>
+
+                <!-- end of 20 episode -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are variables? What is the difference between var, let, and const?
+                        basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="21">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are data types in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="22">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between primitive and non-primitive data
+                        types?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="23">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between null and undefined in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="24">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the use of typeof operator?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="25">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is type coercion in JS? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="26">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are operators? What are the types of operators in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="27">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between unary, binary, and ternary
+                        operators?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="28">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is short-circuit evaluation in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="29">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is operator precedence?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="30">
+                </li>
+
+                <!--end of 30 episode  -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are the types of conditions statements in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="31">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">When to use which type of conditions statements in real
+                        applications?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="32">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between == and ===? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="33">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between Spread and Rest operator in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="34">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Arrays in JS? How to get, add & remove elements from arrays?
+                        basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="35">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the indexOf() method of an Array?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="36">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between find() and filter() methods of an Array? V.
+                        IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="37">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the slice() method of an Array?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="38">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between push() and concat() methods of an
+                        Array?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="39">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between pop() and shift() methods of an
+                        Array?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="40">
+                </li>
+
+                <!-- end of 40 episode -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the splice() method of an Array?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="41">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between the slice() and splice() methods?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="42">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between map() and forEach() array methods? V.
+                        IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="43">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How to sort and reverse an array?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="44">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Array Destructuring in JS? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="45">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are array-like objects in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="46">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How to convert an array-like object into an array?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="47">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is a loop? What are the types of loops in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="48">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between while and for loops?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="49">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between while and do-while loops? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="50">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between break and continue statement? V.
+                        IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="51">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between for and for...of loop in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="52">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between for...of and for...in loop?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="53">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is forEach method? Compare it with for...of and for...in loop?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="54">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">When to use for...of loop and when to use forEach method in
+                        applications?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="55">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Functions in JS? What are the types of function?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="56">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between named and anonymous functions?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="57">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is function expression in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="58">
+                </li>
+                <!--  -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Arrow Functions in JS? What is its use?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="59">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Callback Functions? What is its use? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="60">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Higher-order function in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="61">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between arguments and parameters?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="62">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">In how many ways can you pass arguments to a function?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="63">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How do you use default parameters in a function?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="64">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the use of event handling in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="65">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are First-Class functions in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="66">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Pure and Impure functions in JS? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="67">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Function Currying in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="68">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are call, apply, and bind methods in JS? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="69">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is a String?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="70">
+                </li>
+                <!-- end of 70 -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are template literals and string interpolation in strings? V.
+                        IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="71">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between single quotes (''), double quotes ("") &
+                        backticks (``)?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="72">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are some important string operations in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="73">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is string immutability? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="74">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">In how many ways can you concatenate strings?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="75">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is DOM? What is the difference between HTML and DOM? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="76">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How do you select, modify, create, and remove DOM elements? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="77">
+                </li>
+
+
+
+
+
+                <!-- from 77 adding more questions -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are selectors in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="78">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between getElementById, getElementsByClassName, and
+                        getElementsByTagName?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="79">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between querySelector() and querySelectorAll()? V.
+                        IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="80">
+                </li>
+
+                <!-- end of 80 -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are the methods to modify elements' properties and attributes?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="81">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between innerHTML and textContent? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="82">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How to add and remove properties of HTML elements?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="83">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How to add and remove style from HTML elements?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="84">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How to create new elements in DOM using JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="85">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between createElement() and createTextNode?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="86">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Error Handling in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="87">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the role of finally block in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="88">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the throw statement in JS? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="89">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Error propagation in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="90">
+                </li>
+                <!-- end of 90 -->
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are the best practices for error handling?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="91">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are the different types of errors in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="92">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Objects in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="93">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">In how many ways can we create an object? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="94">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between array and objects?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="95">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How do you add or modify or delete properties of an object?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="96">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the difference between dot notation and bracket notation?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="97">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are some common methods to iterate over the properties of an
+                        object?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="98">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How do you check if a property exists in an object?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="99">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How do you clone or copy an object?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="100">
+                </li>
+                <!-- end of 90 -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are the best practices for error handling?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="91">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are the different types of errors in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="92">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are Objects in JS? basics</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="93">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">In how many ways can we create an object? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="94">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between array and objects?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="95">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How do you add or modify or delete properties of an object?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="96">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the difference between dot notation and bracket notation?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="97">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are some common methods to iterate over the properties of an
+                        object?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="98">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How do you check if a property exists in an object?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="99">
+                </li>
+
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How do you clone or copy an object?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="100">
+                </li>
+                <!-- end of 100 -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between deep copy and shallow copy in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="101">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Set Object in JS? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="102">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Map Object in JS? V. IMP.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="103">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between Map and Object in JS?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="104">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How do you detect primitive or non-primitive values types in js?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="105">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the key features introduced in js ES6?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="106">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Difference between var let and const and hoisting?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="107">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are arrow functions in js?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="108">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is strict mode in js?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="109">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is NaN?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="110">
+                </li>
+                <!-- end of 110 -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Is JavaScript statically typed or dynamically typed language?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="111">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain map, filter, and reduce.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="112">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Difference between null and undefined?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="113">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is DOM and BOM?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="114">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the "this" keyword in JavaScript with an example.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="115">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is scope and closure in JavaScript?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="116">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain call, bind, and apply.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="117">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are prototypes in JavaScript?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="118">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is callback and callback hell?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="119">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is temporal dead zone (TDZ)?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="120">
+                </li>
+                <!-- end of 120 -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain rest and spread operator in JavaScript?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="121">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are default parameters in JavaScript?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="122">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Difference between function declaration and expression?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="123">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Difference between setTimeout, setImmediate, and process.nextTick?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="124">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are data types present in JavaScript?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="125">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between null and undefined?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="126">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How does JavaScript handle type coercion?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="127">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of hoisting in JavaScript?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="128">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is scope in JavaScript?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="129">
+                </li>
+                
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between == and === in JavaScript?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="130">
+                </li>
+             <!-- end of 130 -->
+             <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">Describe closure in JavaScript with an example?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="131">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">What is the "this" keyword in JavaScript and how does its context change?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="132">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">What are arrow functions and how do they differ from regular functions?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="133">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">What are template literals in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="134">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">What is Higher Order Function (HOF) in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="135">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">Can functions be assigned as values to variables in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="136">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">How do functional programming concepts apply in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="137">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">What are Immediately Invoked Function Expressions (IIFEs)?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="138">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">How do you create private variables in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="139">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">How do you create an object in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="140">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">What are prototypes in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="141">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">What are the differences between object literals and constructor functions in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="142">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">Explain prototypal inheritance in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="143">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">How do you add or remove properties from an object in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="144">
+            </li>
+            
+            <li class="flex justify-between items-center mb-4">
+                <span class="mr-4 w-full">What is the event loop in JavaScript?</span>
+                <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="145">
+            </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const progressBar = document.getElementById('progressBar');
+        const progressPercentage = document.getElementById('progressPercentage');
+        const checkboxes = document.querySelectorAll('.checkbox');
+        const toggleCheckAllBtn = document.getElementById('toggleCheckAllBtn');
+        const totalEpisodes = 155;
+
+
+        const modeToggleBtn = document.getElementById('modeToggleBtn');
+        const modeIcon = document.getElementById('modeIcon');
+
+        modeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('bg-gray-800');
+            document.body.classList.toggle('text-black');
+            if (document.body.classList.contains('bg-gray-800')) {
+                modeIcon.classList.remove('ri-sun-line');
+                modeIcon.classList.add('ri-moon-line');
+            } else {
+                modeIcon.classList.remove('ri-moon-line');
+                modeIcon.classList.add('ri-sun-line');
+            }
+        });
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                updateProgressBar();
+            });
+        });
+
+        toggleCheckAllBtn.addEventListener('click', () => {
+            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            const shouldCheckAll = !allChecked;
+
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = shouldCheckAll;
+                checkbox.classList.toggle('checked', shouldCheckAll);
+            });
+
+            toggleCheckAllBtn.textContent = shouldCheckAll ? 'Uncheck All' : 'Check All';
+            updateProgressBar();
+        });
+
+        function updateProgressBar() {
+            const checkedCount = document.querySelectorAll('.checkbox.checked').length;
+            const progressPercentageValue = Math.floor((checkedCount / totalEpisodes) * 100);
+            progressBar.style.width = `${progressPercentageValue}%`;
+            progressPercentage.textContent = `${progressPercentageValue}%`;
+            progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0); // Change color to green if progress > 0%
+        }
+    </script>
+</body>
+
+</html>

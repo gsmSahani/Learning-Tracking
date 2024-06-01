@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Style for default numbering */
+        #episodeList {
+            counter-reset: list-counter;
+        }
+
+        #episodeList li {
+            counter-increment: list-counter;
+        }
+
+        #episodeList li::before {
+            content: counter(list-counter) ". ";
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-200">
+    <nav class="bg-white p-4 flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Foundation of HTML CSS JAVASCRIPT</h1>
+        <div>
+            <button id="modeToggleBtn">
+                <i id="modeIcon" class="ri-sun-line text-yellow-500 text-lg"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div>
+                <div class="relative bg-gray-400 h-12 rounded-full overflow-hidden w-full" style="width: 91vw;">
+                    <h2
+                        class="absolute top-1 left-0 right-0 bottom-0 flex items-center justify-center text-xl font-semibold mb-2">
+                        Progress Bar...</h2>
+                    <div id="progressBar" class="absolute top-0 left-0 bg-green-400 h-full"></div>
+                    <span id="progressPercentage"
+                        class="absolute top-0 right-0 px-2 h-full flex items-center text-white"></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-xl font-semibold mb-2 text-center bg-dark pt-5">50 Days 50 HTML CSS JAVASCRIPT Project</h2>
+            <div class="flex justify-end mb-4">
+                <button id="toggleCheckAllBtn" class="bg-blue-500 text-white px-4 py-2 rounded-full mx-3">Check
+                    All</button>
+            </div>
+            <ul id="episodeList" class="list-decimal list-inside">
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Expanding Cards</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="1">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Progess Steps</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="2">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Rotating Navigations</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="3">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Hidden Search Widget</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="4">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Blurry Loading</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="5">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Scroll Animations</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="6">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Split Landing Page</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="7">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Form Wave Animations</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="8">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Sound Board</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="9">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full"> Dad Jokes</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="10">
+                </li>
+
+                <!-- end of 10 questions -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Event Keycodes</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="11">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">FAQ Collapse</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="12">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Random Choice Picker</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="13">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Animated Navigation</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="14">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Incrementing Counter</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="15">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Drink Water</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="16">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Movie App</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="17">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Background Slider</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="18">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Theme Clock</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="19">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Button Ripple Effect</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="20">
+                </li>
+
+                <!-- end of 20 episode -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Insect Catch Game</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="21">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Drag N Drop</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="22">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Drawing App</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="23">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Kinetic Loader</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="24">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Content Placeholder</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="25">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Sticky Navbar</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="26">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Double Vertical Slider</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="27">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Toast Notification</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="28">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Github Profiles</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="29">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Double Click Heart</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="30">
+                </li>
+
+                <!--end of 30 episode  -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Auto Text Effect</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="31">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Password Generator</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="32">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Good Cheap Fast</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="33">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Notes App</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="34">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Animated Countdown</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="35">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Image Carousel</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="36">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Hoverboard</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="37">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Pokedex</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="38">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Mobile Tab Navigation</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="39">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Password Strength Background</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="40">
+                </li>
+
+                <!-- end of 40 episode -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">3D Background Boxes</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="41">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Verify Account UI</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="42">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Live User Filter</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="43">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Feedback UI Design</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="44">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full"> Custom Range Slider</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="45">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Netflix Mobile Navigation</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="46">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Quiz App</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="47">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Testimonial Box</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="48">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Random Image Feed</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="49">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Todo List</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="50">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const progressBar = document.getElementById('progressBar');
+        const progressPercentage = document.getElementById('progressPercentage');
+        const checkboxes = document.querySelectorAll('.checkbox');
+        const toggleCheckAllBtn = document.getElementById('toggleCheckAllBtn');
+        const totalEpisodes = 50;
+
+
+        const modeToggleBtn = document.getElementById('modeToggleBtn');
+        const modeIcon = document.getElementById('modeIcon');
+
+        modeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('bg-gray-800');
+            document.body.classList.toggle('text-black');
+            if (document.body.classList.contains('bg-gray-800')) {
+                modeIcon.classList.remove('ri-sun-line');
+                modeIcon.classList.add('ri-moon-line');
+            } else {
+                modeIcon.classList.remove('ri-moon-line');
+                modeIcon.classList.add('ri-sun-line');
+            }
+        });
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                updateProgressBar();
+            });
+        });
+
+        toggleCheckAllBtn.addEventListener('click', () => {
+            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            const shouldCheckAll = !allChecked;
+
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = shouldCheckAll;
+                checkbox.classList.toggle('checked', shouldCheckAll);
+            });
+
+            toggleCheckAllBtn.textContent = shouldCheckAll ? 'Uncheck All' : 'Check All';
+            updateProgressBar();
+        });
+
+        function updateProgressBar() {
+            const checkedCount = document.querySelectorAll('.checkbox.checked').length;
+            const progressPercentageValue = Math.floor((checkedCount / totalEpisodes) * 100);
+            progressBar.style.width = `${progressPercentageValue}%`;
+            progressPercentage.textContent = `${progressPercentageValue}%`;
+            progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0); // Change color to green if progress > 0%
+        }
+    </script>
+</body>
+
+</html>

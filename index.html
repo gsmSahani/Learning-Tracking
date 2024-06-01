@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Preparation Progress Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200">
+    <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Interview Preparation Progress Tracker</h1>
+        <div>
+            <button id="modeToggleBtn">
+                <i id="modeIcon" class="ri-sun-line text-yellow-500 text-lg"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4">
+        <div class="grid grid-cols-2 gap-4">
+            <a href="./subIndex page/namastejs.html" class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                <h2 class="text-xl font-semibold mb-2">Namaste JavaScript</h2>
+                <p>Some description about the resource...</p>
+            </a>
+            <a href="./subIndex page/codingProblem.html" class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                <h2 class="text-xl font-semibold mb-2">Coding Problems</h2>
+                <p>Some description about the resource...</p>
+            </a>
+            <a href="./subIndex page/fiftyDays.html" class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                <h2 class="text-xl font-semibold mb-2">50 Days 50 HTML CSS JavaScript</h2>
+                <p>Some description about the resource...</p>
+            </a>
+            <a href="./subIndex page/vanillajs.html" class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                <h2 class="text-xl font-semibold mb-2">30 Days Vanilla JavaScript</h2>
+                <p>Some description about the resource...</p>
+            </a>
+            <a href="./subIndex page/reactJsPrep.html" class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                <h2 class="text-xl font-semibold mb-2">100 React JS Interview Questions</h2>
+                <p>Some description about the resource...</p>
+            </a>
+            <a href="./subIndex page/javascriptPrep.html" class="card bg-white p-4 shadow-md rounded-lg cursor-pointer transition duration-300 hover:bg-gray-100">
+                <h2 class="text-xl font-semibold mb-2">100 JavaScript Interview Questions</h2>
+                <p>Some description about the resource...</p>
+            </a>
+        </div>
+    </div>
+    <script>
+        const modeToggleBtn = document.getElementById('modeToggleBtn');
+        const modeIcon = document.getElementById('modeIcon');
+
+        modeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('bg-gray-800');
+            document.body.classList.toggle('text-black');
+            if (document.body.classList.contains('bg-gray-800')) {
+                modeIcon.classList.remove('ri-sun-line');
+                modeIcon.classList.add('ri-moon-line');
+            } else {
+                modeIcon.classList.remove('ri-moon-line');
+                modeIcon.classList.add('ri-sun-line');
+            }
+        });
+    </script>
+</body>
+
+</html>

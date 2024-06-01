@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        #episodeList {
+            counter-reset: list-counter;
+        }
+
+        #episodeList li {
+            counter-increment: list-counter;
+        }
+
+        #episodeList li::before {
+            content: counter(list-counter) ". ";
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-200">
+    <nav class="bg-white p-4 flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Base of React js Questoins</h1>
+        <div>
+            <button id="modeToggleBtn">
+                <i id="modeIcon" class="ri-sun-line text-yellow-500 text-lg"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div>
+                <div class="relative bg-gray-400 h-12 rounded-full overflow-hidden w-full" style="width: 91vw;">
+                    <h2
+                        class="absolute top-1 left-0 right-0 bottom-0 flex items-center justify-center text-xl font-semibold mb-2">
+                        Progress Bar...</h2>
+                    <div id="progressBar" class="absolute top-0 left-0 bg-green-400 h-full"></div>
+                    <span id="progressPercentage"
+                        class="absolute top-0 right-0 px-2 h-full flex items-center text-white"></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-xl font-semibold mb-2 text-center bg-dark pt-5">Commonly Asked React JS Interview Questions</h2>
+            <div class="flex justify-end mb-4">
+                <button id="toggleCheckAllBtn" class="bg-blue-500 text-white px-4 py-2 rounded-full mx-3">Check
+                    All</button>
+            </div>
+            <ul id="episodeList" class="list-decimal list-inside">
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is React?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="1">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain JSX</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="2">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the virtual DOM?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="3">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the significance of keys in React?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="4">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are state and props in React?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="5">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between state and props?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="6">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of lifting state up.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="7">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of setState in React?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="8">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is React Router?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="9">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the useEffect hook.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="10">
+                </li>
+                
+
+                <!-- end of 10 questions -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are controlled components in React?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="11">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is Redux, and why is it used?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="12">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of higher-order components (HOC).</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="13">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the useReducer hook?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="14">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the significance of the key attribute in React lists?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="15">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the difference between class components and functional components?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="16">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of refs in React.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="17">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are React hooks?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="18">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the purpose of the useContext hook.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="19">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the significance of the dangerouslySetInnerHTML property in React?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="20">
+                </li>
+                
+
+                <!-- end of 20 episode -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the componentDidMount lifecycle method?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="21">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the React developer tool?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="22">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of context in React.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="23">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are the advantages of using React?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="24">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How does React handle prop drilling, and how can it be avoided?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="25">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the shouldComponentUpdate method?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="26">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the significance of React Fragments.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="27">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the significance of the key prop in React Router?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="28">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the forwardRef function in React?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="29">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of error boundaries in React.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="30">
+                </li>
+                
+
+                <!--end of 30 episode  -->
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the significance of the memo function in React?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="31">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How does React handle forms?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="32">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the purpose of the useMemo hook.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="33">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the significance of the useCallback hook?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="34">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What are React portals?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="35">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of suspense in React.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="36">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the useEffect cleanup function?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="37">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How does React handle routing?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="38">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the useLayoutEffect hook?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="39">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of lazy loading in React.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="40">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the significance of the React.memo function?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="41">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How does React handle code splitting?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="42">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the useImperativeHandle hook?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="43">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of the useDebugValue hook.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="44">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the useState hook?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="45">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the significance of the SuspenseList component in React.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="46">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the significance of the react-scripts package in a React application?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="47">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">Explain the concept of error boundaries in React.</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="48">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">What is the purpose of the useReducer hook?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="49">
+                </li>
+                <li class="flex justify-between items-center mb-4">
+                    <span class="mr-4 w-full">How does React handle forms?</span>
+                    <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="50">
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <script>
+        const progressBar = document.getElementById('progressBar');
+        const progressPercentage = document.getElementById('progressPercentage');
+        const checkboxes = document.querySelectorAll('.checkbox');
+        const toggleCheckAllBtn = document.getElementById('toggleCheckAllBtn');
+        const totalEpisodes = 50;
+
+
+        const modeToggleBtn = document.getElementById('modeToggleBtn');
+        const modeIcon = document.getElementById('modeIcon');
+
+        modeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('bg-gray-800');
+            document.body.classList.toggle('text-black');
+            if (document.body.classList.contains('bg-gray-800')) {
+                modeIcon.classList.remove('ri-sun-line');
+                modeIcon.classList.add('ri-moon-line');
+            } else {
+                modeIcon.classList.remove('ri-moon-line');
+                modeIcon.classList.add('ri-sun-line');
+            }
+        });
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                updateProgressBar();
+            });
+        });
+
+        toggleCheckAllBtn.addEventListener('click', () => {
+            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            const shouldCheckAll = !allChecked;
+
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = shouldCheckAll;
+                checkbox.classList.toggle('checked', shouldCheckAll);
+            });
+
+            toggleCheckAllBtn.textContent = shouldCheckAll ? 'Uncheck All' : 'Check All';
+            updateProgressBar();
+        });
+
+        function updateProgressBar() {
+            const checkedCount = document.querySelectorAll('.checkbox.checked').length;
+            const progressPercentageValue = Math.floor((checkedCount / totalEpisodes) * 100);
+            progressBar.style.width = `${progressPercentageValue}%`;
+            progressPercentage.textContent = `${progressPercentageValue}%`;
+            progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0); // Change color to green if progress > 0%
+        }
+    </script>
+</body>
+
+</html>
