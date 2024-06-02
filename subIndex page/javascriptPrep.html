@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body class="bg-gray-200 flex flex-col min-h-screen">
+<body class="bg-gray-200 flex flex-col min-h-screen" data-page-id="javascript-prep">
     <nav id="navbar" class="bg-white shadow-md p-4 sticky top-0 z-10 flex justify-between items-center">
         <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Interview Preparation Progress Tracker</h1>
         <div>
@@ -77,8 +77,9 @@
             <h2 class="text-xl font-semibold mb-2 text-center bg-dark pt-5">List of commonly asked logical question in
                 Interview</h2>
             <div class="flex justify-end mb-4">
-                <button id="toggleCheckAllBtn" class="bg-blue-500 text-white px-4 py-2 rounded-full mx-3">Check
-                    All</button>
+                <!-- <button id="toggleCheckAllBtn" class="bg-blue-500 text-white px-4 py-2 rounded-full mx-3">Check All</button> -->
+                <button id="resetBtn" class="bg-blue-500 text-white px-4 py-2 rounded-full mx-3">Reset <i
+                        class="ri-loop-right-fill"></i></button>
             </div>
             <ul id="episodeList" class="list-decimal list-inside">
                 <li class="flex justify-between items-center mb-4">
@@ -815,75 +816,134 @@
         <p class="w-full dark:text-gray-300">&copy; 2024 Your Company Name. All rights reserved.</p>
     </footer>
     <script>
-        const modeToggleBtn = document.getElementById('modeToggleBtn');
-        const modeIcon = document.getElementById('modeIcon');
-        const progressBar = document.getElementById('progressBar');
-        const progressPercentage = document.getElementById('progressPercentage');
-        const checkboxes = document.querySelectorAll('.checkbox');
-        const toggleCheckAllBtn = document.getElementById('toggleCheckAllBtn');
-        const totalEpisodes = 155;
-        const navbar = document.getElementById('navbar');
-        const footer = document.querySelector('footer');
-        const body = document.body;
 
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const pageId = document.body.dataset.pageId; // Page identifier
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const progressPercentage = document.getElementById('progressPercentage');
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const resetBtn = document.getElementById('resetBtn');
+            const modeToggleBtn = document.getElementById('modeToggleBtn');
+            const modeIcon = document.getElementById('modeIcon');
+            const navbar = document.getElementById('navbar');
+            const footer = document.querySelector('footer');
+            const body = document.body;
+            const totalEpisodes = 155;
 
+            modeToggleBtn.addEventListener('click', () => {
+                body.classList.toggle('bg-gray-800');
+                body.classList.toggle('text-white');
+                navbar.classList.toggle('bg-gray-800');
+                navbar.classList.toggle('text-white');
+                footer.classList.toggle('bg-gray-800');
+                footer.classList.toggle('text-white');
+                if (document.body.classList.contains('bg-gray-800')) {
+                    modeIcon.classList.remove('ri-sun-line');
+                    modeIcon.classList.add('ri-moon-line');
+                } else {
+                    modeIcon.classList.remove('ri-moon-line');
+                    modeIcon.classList.add('ri-sun-line');
+                }
+            });
+            function updateProgress() {
+                const checkedCheckboxes = document.querySelectorAll('.checkbox:checked');
+                const progress = (checkedCheckboxes.length / checkboxes.length) * 100;
+                progressBar.style.width = progress + '%';
+                progressPercentage.textContent = `${Math.round(progress)}%`;
 
+                if (progress === 100) {
+                    progressText.textContent = 'Completed! 🎉';
+                } else {
+                    progressText.textContent = 'Progress Bar...';
+                }
 
-        modeToggleBtn.addEventListener('click', () => {
-            body.classList.toggle('bg-gray-800');
-            body.classList.toggle('text-white');
-
-
-            navbar.classList.toggle('bg-gray-800');
-            navbar.classList.toggle('text-white');
-
-
-            footer.classList.toggle('bg-gray-800');
-            footer.classList.toggle('text-white');
-            if (body.classList.contains('bg-gray-800')) {
-                modeIcon.classList.remove('ri-sun-line');
-                modeIcon.classList.add('ri-moon-line');
-            } else {
-                modeIcon.classList.remove('ri-moon-line');
-                modeIcon.classList.add('ri-sun-line');
+                // Save progress to local storage
+                localStorage.setItem(`${pageId}-progress`, JSON.stringify([...checkedCheckboxes].map(cb => cb.dataset.episode))); // Local storage key update
             }
-        });
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('click', () => {
-                checkbox.classList.toggle('checked');
-                updateProgressBar();
+             // Load progress from local storage
+             const savedProgress = JSON.parse(localStorage.getItem(`${pageId}-progress`)) || []; // Local storage key update
+            checkboxes.forEach(cb => {
+                if (savedProgress.includes(cb.dataset.episode)) {
+                    cb.checked = true;
+                }
+            });
+            updateProgress();
+
+            // Event listeners for checkboxes
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', updateProgress);
+            });
+
+            // Reset button functionality
+            resetBtn.addEventListener('click', () => {
+                const confirmation = confirm('Are you sure you want to reset the progress?');
+                if (confirmation) {
+                    checkboxes.forEach(cb => cb.checked = false);
+                    updateProgress();
+                }
             });
         });
 
-        toggleCheckAllBtn.addEventListener('click', () => {
-            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
-            const shouldCheckAll = !allChecked;
 
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = shouldCheckAll;
-                checkbox.classList.toggle('checked', shouldCheckAll);
-            });
 
-            toggleCheckAllBtn.textContent = shouldCheckAll ? 'Uncheck All' : 'Check All';
-            toggleCheckAllBtn.classList.toggle('bg-red-500', shouldCheckAll);
-            toggleCheckAllBtn.classList.toggle('bg-blue-500', !shouldCheckAll);
-            updateProgressBar();
-        });
 
-        function updateProgressBar() {
-            const checkedCount = document.querySelectorAll('.checkbox.checked').length;
-            const progressPercentageValue = Math.floor((checkedCount / totalEpisodes) * 100);
-            progressBar.style.width = `${progressPercentageValue}%`;
-            progressPercentage.textContent = `${progressPercentageValue}%`;
-            progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0); // Change color to green if progress > 0%
-            if (progressPercentageValue === 100) {
-                progressBar.classList.add('bg-green-400');
-                progressText.classList.add('text-gray-900');
-            } else {
-                progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0);
-                progressText.classList.toggle('text-gray-900', progressPercentageValue > 0);
-            }
-        }
+
+        // modeToggleBtn.addEventListener('click', () => {
+        //     body.classList.toggle('bg-gray-800');
+        //     body.classList.toggle('text-white');
+
+
+        //     navbar.classList.toggle('bg-gray-800');
+        //     navbar.classList.toggle('text-white');
+
+
+        //     footer.classList.toggle('bg-gray-800');
+        //     footer.classList.toggle('text-white');
+        //     if (body.classList.contains('bg-gray-800')) {
+        //         modeIcon.classList.remove('ri-sun-line');
+        //         modeIcon.classList.add('ri-moon-line');
+        //     } else {
+        //         modeIcon.classList.remove('ri-moon-line');
+        //         modeIcon.classList.add('ri-sun-line');
+        //     }
+        // });
+        // checkboxes.forEach(checkbox => {
+        //     checkbox.addEventListener('click', () => {
+        //         checkbox.classList.toggle('checked');
+        //         updateProgressBar();
+        //     });
+        // });
+
+        // toggleCheckAllBtn.addEventListener('click', () => {
+        //     const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+        //     const shouldCheckAll = !allChecked;
+
+        //     checkboxes.forEach(checkbox => {
+        //         checkbox.checked = shouldCheckAll;
+        //         checkbox.classList.toggle('checked', shouldCheckAll);
+        //     });
+
+        //     toggleCheckAllBtn.textContent = shouldCheckAll ? 'Uncheck All' : 'Check All';
+        //     toggleCheckAllBtn.classList.toggle('bg-red-500', shouldCheckAll);
+        //     toggleCheckAllBtn.classList.toggle('bg-blue-500', !shouldCheckAll);
+        //     updateProgressBar();
+        // });
+
+        // function updateProgressBar() {
+        //     const checkedCount = document.querySelectorAll('.checkbox.checked').length;
+        //     const progressPercentageValue = Math.floor((checkedCount / totalEpisodes) * 100);
+        //     progressBar.style.width = `${progressPercentageValue}%`;
+        //     progressPercentage.textContent = `${progressPercentageValue}%`;
+        //     progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0); // Change color to green if progress > 0%
+        //     if (progressPercentageValue === 100) {
+        //         progressBar.classList.add('bg-green-400');
+        //         progressText.classList.add('text-gray-900');
+        //     } else {
+        //         progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0);
+        //         progressText.classList.toggle('text-gray-900', progressPercentageValue > 0);
+        //     }
+        // }
     </script>
 </body>
 
