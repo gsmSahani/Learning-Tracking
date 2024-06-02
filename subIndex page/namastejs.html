@@ -7,10 +7,15 @@
     <title>Namaste JavaScript</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/mainStyle.css">
+    <link rel="icon" href="../image/prepJourney.png" type="image/png" class="rounded-full"> 
+    
 </head>
 
 <body class="bg-gray-200 flex flex-col min-h-screen" data-page-id="namaste-javascript">
     <nav id="navbar" class="bg-white shadow-md p-4 sticky top-0 z-10 flex justify-between items-center">
+        <img src="../image/Layer 2.png" alt="Logo" class="h-8 sm:h-10 md:h-12 lg:h-12">
+
         <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Interview Preparation Progress Tracker</h1>
         <div>
             <button id="modeToggleBtn">
@@ -44,7 +49,6 @@
             </div>
         </div>
     </div>
-
     <div class="container mx-auto p-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div>
@@ -68,129 +72,129 @@
             </div>
             <ul id="episodeList" class="list-none">
                 <li class="flex justify-between items-center mb-4  ">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"><span class="font-bold">Episode 1
+                    <span class="mr-4 w-full  px-4 p-2"><span class="font-bold">Episode 1
                             :</span> Execution Context</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="1">
                 </li>
                 <li class="flex justify-between items-center mb-4 ">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"><span class="font-bold">Episode 2 :
+                    <span class="mr-4 w-full  px-4 p-2"><span class="font-bold">Episode 2 :
                         </span>How JS is executed & Call Stack</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="2">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 3 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 3 :
                         </span>Hoisting in JavaScript (variables & functions)</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="3">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 4 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 4 :
                         </span>Functions and Variable Environments</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="4">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 5 :
+                    <span class="mr-4 w-full px-4 p-2"> <span class="font-bold">Episode 5 :
                         </span>Shortest JS Program, window & this keyword</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="5">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 6 :
+                    <span class="mr-4 w-full px-4 p-2"> <span class="font-bold">Episode 6 :
                         </span>undefined vs not defined in JS</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="6">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"><span class="font-bold">Episode 7 :
+                    <span class="mr-4 w-full px-4 p-2"><span class="font-bold">Episode 7 :
                         </span>The Scope Chain, Scope & Lexical Environment</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="7">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class=" font-bold">Episode 8 :
+                    <span class="mr-4 w-full px-4 p-2"> <span class=" font-bold">Episode 8 :
                         </span> let & const in JS, Temporal Dead Zone</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="8">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"><span class="font-bold">Episode 9 :
+                    <span class="mr-4 w-full px-4 p-2"><span class="font-bold">Episode 9 :
                         </span>Block Scope & Shadowing in JS</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="9">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 10 :
+                    <span class="mr-4 w-full px-4 p-2"> <span class="font-bold">Episode 10 :
                         </span>Closure in JS</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="10">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 11 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 11 :
                         </span>setTimeout + Closures Interview Question</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="11">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 12 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 12 :
                         </span>Famous Interview Questions ft. Closures</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="12">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode
                             13 : </span> First Class Functions ft. Anonymous Functions</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="13">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"><span class="font-bold">Episode
+                    <span class="mr-4 w-full  px-4 p-2"><span class="font-bold">Episode
                             14 : </span> Callback Functions in JS
                         ft. Event Listeners</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="14">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 15:
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 15:
                         </span>Asynchronous JavaScript & EVENT LOOP from scratch</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="15">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 16 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 16 :
                         </span>JS Engine Exposed, Google's V8 Architecture</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="16">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 17 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 17 :
                         </span>Trust issues with setTimeout()</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="17">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 18 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 18 :
                         </span>Higher-Order Functions ft. Functional Programming</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="18">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 19 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 19 :
                         </span>map, filter & reduce</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="19">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 20 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 20 :
                         </span>Callback Hell</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="20">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 21 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 21 :
                         </span>Promises</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="21">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 22 :
+                    <span class="mr-4 w-full px-4 p-2"> <span class="font-bold">Episode 22 :
                         </span>Creating a Promise, Chaining & Error Handling</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="22">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 23 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 23 :
                         </span>async await</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="23">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"><span class="font-bold">Episode
+                    <span class="mr-4 w-full  px-4 p-2"><span class="font-bold">Episode
                             24 : </span> Promise APIs (all, allSettled, race, any) + Interview Questions
                         🔥</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="24">
                 </li>
                 <li class="flex justify-between items-center mb-4">
-                    <span class="mr-4 w-full bg-blue-500 rounded-full px-4 p-2"> <span class="font-bold">Episode 25 :
+                    <span class="mr-4 w-full  px-4 p-2"> <span class="font-bold">Episode 25 :
                         </span>this keyword in JavaScript</span>
                     <input type="checkbox" class="checkbox h-8 w-8 rounded-lg border-none" data-episode="25">
                 </li>
@@ -199,8 +203,15 @@
         </div>
 
     </div>
-    <footer class="bg-white shadow-md p-4 mt-auto bg-sky-200 dark:bg-gray-800 text-center">
-        <p class="w-full dark:text-gray-300">&copy; 2024 Your Company Name. All rights reserved.</p>
+    <button id="scrollToTopBtn"
+        class="fixed bottom-4 right-4 bg-black hover:bg-blue-700 text-white py-2 px-4 rounded-full">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <footer class="bg-white shadow-md p-4 mt-auto bg-sky-200 dark:bg-gray-800 text-center dark:shadow-2xl">
+        <p class="w-full dark:text-gray-300">&copy; Made with <span style="color: red; height: 50px;"> &#x2665;</span>
+            by Gautam Sahani <a href="https://www.linkedin.com/in/gautam-sahani-3107351a7/"><i
+                    class="ri-linkedin-fill mx-3 px-0"></i></a><a href="https://github.com/gsmSahani"><i
+                    class="ri-github-line"></i></a></p>
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -255,19 +266,20 @@
                 }
             });
             updateProgress();
-
-            // Event listeners for checkboxes
             checkboxes.forEach(cb => {
                 cb.addEventListener('change', updateProgress);
             });
-
-            // Reset button functionality
             resetBtn.addEventListener('click', () => {
                 const confirmation = confirm('Are you sure you want to reset the progress?');
                 if (confirmation) {
                     checkboxes.forEach(cb => cb.checked = false);
                     updateProgress();
                 }
+            });
+            // Scroll to top button functionality
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
     </script>

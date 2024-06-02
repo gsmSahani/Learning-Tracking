@@ -7,24 +7,15 @@
     <title>Namaste JavaScript</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <style>
-        #episodeList {
-            counter-reset: list-counter;
-        }
-
-        #episodeList li {
-            counter-increment: list-counter;
-        }
-
-        #episodeList li::before {
-            content: counter(list-counter) ". ";
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="../style/mainStyle.css">
+    <link rel="icon" href="../image/prepJourney.png" type="image/png" class="rounded-full"> 
+    
 </head>
 
 <body class="bg-gray-200 flex flex-col min-h-screen" data-page-id="namaste-reactjs">
     <nav id="navbar" class="bg-white shadow-md p-4 sticky top-0 z-10 flex justify-between items-center">
+        <img src="../image/Layer 2.png" alt="Logo" class="h-8 sm:h-10 md:h-12 lg:h-12">
+
         <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Interview Preparation Progress Tracker</h1>
         <div>
             <button id="modeToggleBtn">
@@ -698,8 +689,15 @@
             </ul>
         </div>
     </div>
-    <footer class="bg-white shadow-md p-4 mt-auto bg-sky-200 dark:bg-gray-800 text-center">
-        <p class="w-full dark:text-gray-300">&copy; 2024 Your Company Name. All rights reserved.</p>
+    <button id="scrollToTopBtn"
+        class="fixed bottom-4 right-4 bg-black hover:bg-blue-700 text-white py-2 px-4 rounded-full">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <footer class="bg-white shadow-md p-4 mt-auto bg-sky-200 dark:bg-gray-800 text-center dark:shadow-2xl">
+        <p class="w-full dark:text-gray-300">&copy; Made with <span style="color: red; height: 50px;"> &#x2665;</span>
+            by Gautam Sahani <a href="https://www.linkedin.com/in/gautam-sahani-3107351a7/"><i
+                    class="ri-linkedin-fill mx-3 px-0"></i></a><a href="https://github.com/gsmSahani"><i
+                    class="ri-github-line"></i></a></p>
     </footer>
     <script>
 
@@ -770,61 +768,11 @@
                 }
             });
         });
-
-
-
-
-        // modeToggleBtn.addEventListener('click', () => {
-        //     body.classList.toggle('bg-gray-800');
-        //     body.classList.toggle('text-white');
-        //     navbar.classList.toggle('bg-gray-800');
-        //     navbar.classList.toggle('text-white');
-        //     footer.classList.toggle('bg-gray-800');
-        //     footer.classList.toggle('text-white');
-        //     if (document.body.classList.contains('bg-gray-800')) {
-        //         modeIcon.classList.remove('ri-sun-line');
-        //         modeIcon.classList.add('ri-moon-line');
-        //     } else {
-        //         modeIcon.classList.remove('ri-moon-line');
-        //         modeIcon.classList.add('ri-sun-line');
-        //     }
-        // });
-        // checkboxes.forEach(checkbox => {
-        //     checkbox.addEventListener('click', () => {
-        //         checkbox.classList.toggle('checked');
-        //         updateProgressBar();
-        //     });
-        // });
-
-        // toggleCheckAllBtn.addEventListener('click', () => {
-        //     const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
-        //     const shouldCheckAll = !allChecked;
-
-        //     checkboxes.forEach(checkbox => {
-        //         checkbox.checked = shouldCheckAll;
-        //         checkbox.classList.toggle('checked', shouldCheckAll);
-        //     });
-
-        //     toggleCheckAllBtn.textContent = shouldCheckAll ? 'Uncheck All' : 'Check All';
-        //     toggleCheckAllBtn.classList.toggle('bg-red-500', shouldCheckAll);
-        //     toggleCheckAllBtn.classList.toggle('bg-blue-500', !shouldCheckAll);
-        //     updateProgressBar();
-        // });
-
-        // function updateProgressBar() {
-        //     const checkedCount = document.querySelectorAll('.checkbox.checked').length;
-        //     const progressPercentageValue = Math.floor((checkedCount / totalEpisodes) * 100);
-        //     progressBar.style.width = `${progressPercentageValue}%`;
-        //     progressPercentage.textContent = `${progressPercentageValue}%`;
-        //     progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0); // Change color to green if progress > 0%
-        //     if (progressPercentageValue === 100) {
-        //         progressBar.classList.add('bg-green-400');
-        //         progressText.classList.add('text-gray-900');
-        //     } else {
-        //         progressBar.classList.toggle('bg-green-400', progressPercentageValue > 0);
-        //         progressText.classList.toggle('text-gray-900', progressPercentageValue > 0);
-        //     }
-        // }
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 

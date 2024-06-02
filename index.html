@@ -4,13 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Preparation Progress Tracker</title>
+    <title>PrepJourney</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Kalam:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style/mainStyle.css">
+    <link rel="icon" href="./image/prepJourney.png" type="image/png" class="rounded-full"> 
 </head>
 
 <body class="bg-gray-200 flex flex-col min-h-screen">
+    <!-- navigation bar -->
     <nav id="navbar" class="bg-white shadow-md p-4 sticky top-0 z-10 flex justify-between items-center">
+        <img src="./image/Layer 2.png" alt="Logo" class="h-8 sm:h-10 md:h-12 lg:h-12">
         <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Interview Preparation Progress Tracker</h1>
         <div>
             <button id="modeToggleBtn">
@@ -18,7 +25,7 @@
             </button>
         </div>
     </nav>
-
+    <!-- hero section  -->
     <div id="container" class="container mx-auto p-4 flex-grow overflow-y-auto pt-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 w-full">
             <a href="./subIndex page/namastejs.html"
@@ -138,11 +145,15 @@
             </a>
         </div>
     </div>
-    <footer class="bg-white shadow-md p-4 mt-auto bg-sky-200 dark:bg-gray-800 text-center">
-        <p class="w-full dark:text-gray-300">&copy; 2024 Your Company Name. All rights reserved.</p>
+    <!-- footer -->
+    <footer class="bg-white shadow-md p-4 mt-auto bg-sky-200 dark:bg-gray-800 text-center dark:shadow-2xl">
+        <p class="w-full dark:text-gray-300">&copy; Made with <span style="color: red; height: 50px;"> &#x2665;</span>
+            by Gautam Sahani <a href="https://www.linkedin.com/in/gautam-sahani-3107351a7/"><i
+                    class="ri-linkedin-fill mx-3 px-0"></i></a><a href="https://github.com/gsmSahani"><i
+                    class="ri-github-line"></i></a></p>
     </footer>
-
-    <script>
+    <script src="./main.js"></script>
+    <!-- <script>
         const modeToggleBtn = document.getElementById('modeToggleBtn');
         const modeIcon = document.getElementById('modeIcon');
         const navbar = document.getElementById('navbar');
@@ -209,7 +220,7 @@
                 modeIcon.classList.add('ri-sun-line');
             }
         });
-    </script>
+    </script> -->
 
 </body>
 
